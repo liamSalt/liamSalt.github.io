@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+
+<head>
+	<!--Liam Salt-->
+	<title>Predator—Prey Simulation</title>
+	<meta charset="utf-8"/>
+	<meta name="author" content="Liam Salt"/> 	
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
+	
+	<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+	<script src="js/simulation.js"></script>
+<script type="text/javascript">
+  window.onload = function () {
+    //Creating a multi-series line graph from 2 sets of data. Namely dps1 and dps2.
+
+var dps1 = hare; //dataPoints – line 1
+var dps2 = lynx; //dataPoints. – line 2
+
+var chart = new CanvasJS.Chart("chartContainer", {
+    title: {
+        text: ""
+    },
+    axisX: {
+        title: "Generation"
+    },
+    axisY: {
+        title: "Population"
+    },
+    legend: {
+       horizontalAlign: "right",
+       verticalAlign: "top",  
+       fontSize: 15
+     },
+    // begin data for 2 line graphs. Note dps1 and dps2 are
+    //defined above as a json object. See http://www.w3schools.com/json/
+    data: [
+        { type: "line", showInLegend: true,
+      legendText: "Hare",dataPoints: dps1 },
+        { type: "line",showInLegend: true,
+      legendText: "Lynx", dataPoints: dps2 }
+    ]
+    // end of data for 2 line graphs
+    
+}); // End of new chart variable
+
+chart.render();
+  }
+  </script>
+ <script type="text/javascript" src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+</head>
+	
+	
+</head>
+
+<body>
+
+
+	<header>
+	<h1>Lynx & Hare Simulation</h1>
+	</header>
+	
+	<div id="chartContainer" style="height: 300px; width: 40%;"></div>
+	<table id="dataTable"></table>
+	
+	<footer></footer>
+	
+	
+	
+</body>
