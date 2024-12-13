@@ -18,8 +18,9 @@
 </head>
 
 <body style="background-color:#e6e6e6;">
-
-	<div id="chartDisplay" style="background-color:white; height:400px;width:40%;padding-right:5px;margin-left:2em;margin-top:2em">
+	<div id="mainContent">
+	<div class ="column">
+	<div id="chartDisplay" style="background-color:white; height:400px;width:90%;padding-right:5px;margin-left:2em;margin-top:2em">
 	<h1 style="text-align:center;background-color:white">Lynx & Hare Simulation</h1>
 	<div id="chartContainer" style="height: 300px"></div>
 	<div id="formContainer" style = "padding-left:1em">
@@ -35,7 +36,7 @@
 	</div>
 	</div>
 	
-	<div id="tableDisplay" style="background-color:white; height:400px;width:40%;padding-right:5px;margin-left:2em;margin-top:2em;overflow:scroll;margin-bottom:2em;">
+	<div id="tableDisplay" style="background-color:white; height:400px;width:90%;padding-right:5px;margin-left:2em;margin-top:2em;overflow:scroll;margin-bottom:2em;">
 	<table id="dataTable">
 		<tr>
 			<th>Generation</th>
@@ -47,6 +48,33 @@
 		<tbody id="dataTableBody">
 		</tbody>
 	</table>
+	</div>
+	</div>
+	<div class="column">
+	<div id="explanation" style="background-color:white;margin:2em;padding-left:1em;">
+	<h2>Explanation</h2>
+	<p>This is a simulation of a lab activity to be used in teaching Strand B (Biology) of the Ontario SNC1W Curriculum. Students work in groups to 
+	play a game which models simplified population dynamics in an ecosystem consisting of Hare and Lynx.</p>
+	
+	<p>When performed by students in class, the procedure goes as follows:</p>
+	<ol>
+	<li>Lay out a flat surface (table, whiteboard, etc.).</li>
+	<li>Toss an initial number (sugg. 10) of small paper squares (hare) randomly onto the board.</li>
+	<li>Toss an initial number (sugg. 2) of large paper squares (lynx) randomly onto the board.</li>
+	<li>Removed and count all hare that were touched by a lynx.</li>
+	<li>Remove and count any lync that touched fewer than 3 hare.</li>
+	<li>Determine and record the number of hare and lynx that remain on the board.</li>
+	<li>For the next generation, start with twice the number of remaining hare and lynx.</li>
+	</ol>
+	
+	<p>If the lynx population is ever wiped out, the next generation should start with 1 lynx (3, in the case of hare).</p>
+	
+
+	
+	
+	</div>
+	</div>
+	
 	</div>
 	<footer></footer>
 	
