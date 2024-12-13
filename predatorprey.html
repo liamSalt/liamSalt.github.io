@@ -17,16 +17,13 @@
 	
 </head>
 
-<body>
+<body style="background-color:#e6e6e6;">
 
-
-	<header>
-	<h1>Lynx & Hare Simulation</h1>
-	</header>
-	
-	<div id="chartContainer" style="height: 300px; width: 40%;"></div>
+	<div id="chartDisplay" style="background-color:white; height:400px;width:40%;padding-right:5px;margin-left:2em;margin-top:2em">
+	<h1 style="text-align:center;background-color:white">Lynx & Hare Simulation</h1>
+	<div id="chartContainer" style="height: 300px"></div>
 	<div id="formContainer" style = "padding-left:1em">
-	<form>
+	<form style="background-color:white">
 		<label for="hare">Hare Pop:</label>
 		<input style="width:4em" type="number" id="hare" name="hare" min = "0" value="10">
 		<label for="lynx" style = "margin-left:1em">Lynx Pop:</label>
@@ -36,13 +33,21 @@
 		<input type="button" id="runButton" style = "width: 5em;margin-left:1em" value="Run">
 	</form>
 	</div>
+	</div>
 	
+	<div id="tableDisplay" style="background-color:white; height:400px;width:40%;padding-right:5px;margin-left:2em;margin-top:2em;overflow:scroll;margin-bottom:2em;">
 	<table id="dataTable">
-	
-	
-	
+		<tr>
+			<th>Generation</th>
+			<th>Start Hare Pop</th>
+			<th>Start Lynx Pop</th>
+			<th>End Hare Pop</th>
+			<th>End Lynx Pop</th>
+		</tr>
+		<tbody id="dataTableBody">
+		</tbody>
 	</table>
-	
+	</div>
 	<footer></footer>
 	
 	
@@ -52,17 +57,19 @@
 	let result = runSim(H_init = document.getElementById('hare').value,L_init = document.getElementById('lynx').value,max_gens = document.getElementById('gens').value);
 	let hare = result[0];
 	let lynx = result[1];
-	printGraph(hare,lynx);
+	let generations = result[2];
+	printGraph(hare,lynx,generations);
 	
 	};
   document.getElementById('runButton').addEventListener('click', function(e) {
 	let result = runSim(H_init = document.getElementById('hare').value,L_init = document.getElementById('lynx').value,max_gens = document.getElementById('gens').value);
 	let hare = result[0];
 	let lynx = result[1];
-	printGraph(hare,lynx);
+	let generations = result[2];
+	printGraph(hare,lynx,generations);
 });
   
-  function printGraph (hare,lynx){
+  function printGraph (hare,lynx,generations){
     //Creating a multi-series line graph from 2 sets of data. Namely dps1 and dps2.
 	
 	
@@ -76,6 +83,7 @@
     axisX: {
         title: "Generation"
     },
+	zoomEnabled: true,
     axisY: {
         title: "Population"
     },
@@ -95,7 +103,26 @@
     
 }); // End of new chart variable
 
+
 chart.render();
+	
+	const tableBody = document.getElementById('dataTableBody');
+	tableBody.innerHTML="";
+	generations.forEach((rowData,index) => {
+		const row = document.createElement("tr");
+		const indexCell = document.createElement("td");
+                indexCell.textContent = index + 1; // Start from 1
+                row.appendChild(indexCell);
+		rowData.forEach(cellData => {
+			const cell = document.createElement("td");
+            cell.textContent = cellData; // Set the cell text
+            row.appendChild(cell); // Append cell to the row
+            });
+
+                // Append the row to the table body
+        tableBody.appendChild(row);
+    });
+	
   }
   </script>
  <script type="text/javascript" src="https://cdn.canvasjs.com/canvasjs.min.js"></script>

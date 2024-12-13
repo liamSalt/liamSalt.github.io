@@ -66,5 +66,5 @@ function runSim(H_init = 10, L_init = 2, max_gens=15) {
 		hare.push({x:i+1,y:generations[i][0]});
 		lynx.push({x:i+1,y:generations[i][1]});
 	}
-	return [hare, lynx];
+	return [hare, lynx,generations];
 }
