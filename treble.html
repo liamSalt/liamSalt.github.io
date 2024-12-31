@@ -15,7 +15,7 @@
 	
 </head>
 
-<body style="background-color:#e6e6e6;">
+<body style="background-color:#c2f4ff;">
 	<h1 id="titleLogo" style="font-family:'Montserrat';text-align:center;font-size:40px;margin-bottom:10px;margin-top:10px">&#119070 Treble &#119070</h1>
 	<div id="maincontent">
 		<div class = "column left">
@@ -23,7 +23,7 @@
 				<div class="category">Pop Music</div>
 				<div  class="category">2012 Hits</div>
 				<div class="category">Video Games</div>
-				<div class="category">dsfsdfd</div>
+				<div class="category">French Pop</div>
 				<div class="category">CATEGORY 5</div>
 				<div class = "clue" id = "clue11" clue-text="What is this song?" song-link="" points="100">100</div>
 				<div class = "clue" id = "clue12" clue-text="What is this song?" song-link="" points="100">100</div>
@@ -104,7 +104,8 @@
 				const playerNum = playerCount;
 				
 				const div1 = document.createElement('div');
-				div1.innerHTML = 'New Player';div1.contentEditable = 'true';
+				div1.innerHTML = 'Player '.concat(playerNum);
+				div1.contentEditable = 'true';
 				const div2 = document.createElement('div');
 				div2.innerHTML = '0';
 				div2.id = "player".concat(playerNum).concat('score');
