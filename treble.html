@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+
+<head>
+	<!--Liam Salt-->
+	<title>Treble</title>
+	<meta charset="utf-8"/>
+	<meta name="author" content="Liam Salt"/> 	
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/treblestyle.css"/>
+	
+	
+	
+</head>
+
+<body style="background-color:#e6e6e6;">
+	<h1 id="titleLogo" style="font-family:'Montserrat';text-align:center;font-size:40px;margin-bottom:10px;margin-top:10px">&#119070 Treble &#119070</h1>
+	<div id="maincontent">
+		<div class = "column left">
+			<div class="container">
+				<div class="category">Pop Music</div>
+				<div  class="category">2012 Hits</div>
+				<div class="category">Video Games</div>
+				<div class="category">dsfsdfd</div>
+				<div class="category">CATEGORY 5</div>
+				<div class = "clue" id = "clue11" clue-text="What is this song?" song-link="" points="100">100</div>
+				<div class = "clue" id = "clue12" clue-text="What is this song?" song-link="" points="100">100</div>
+				<div class = "clue" id = "clue13" clue-text="What is this song?" song-link="" points="100">100</div>
+				<div class = "clue" id = "clue14" clue-text="What is this song?" song-link="" points="100">100</div>
+				<div class = "clue" id = "clue15" clue-text="What is this song?" song-link="" points="100">100</div>
+				<div class = "clue" id = "clue21" clue-text="What is this song?" song-link="" points="200">200</div>
+				<div class = "clue" id = "clue22" clue-text="What is this song?" song-link="" points="200">200</div>
+				<div class = "clue" id = "clue23" clue-text="What is this song?" song-link="" points="200">200</div>
+				<div class = "clue" id = "clue24" clue-text="What is this song?" song-link="" points="200">200</div>
+				<div class = "clue" id = "clue25" clue-text="What is this song?" song-link="" points="200">200</div>
+				<div class = "clue" id = "clue31" clue-text="What is this song?" song-link="" points="300">300</div>
+				<div class = "clue" id = "clue32" clue-text="What is this song?" song-link="" points="300">300</div>
+				<div class = "clue" id = "clue33" clue-text="What is this song?" song-link="" points="300">300</div>
+				<div class = "clue" id = "clue34" clue-text="What is this song?" song-link="" points="300">300</div>
+				<div class = "clue" id = "clue35" clue-text="What is this song?" song-link="" points="300">300</div>
+				<div class = "clue" id = "clue41" clue-text="What is this song?" song-link="" points="400">400</div>
+				<div class = "clue" id = "clue42" clue-text="What is this song?" song-link="" points="400">400</div>
+				<div class = "clue" id = "clue43" clue-text="What is this song?" song-link="" points="400">400</div>
+				<div class = "clue" id = "clue44" clue-text="What is this song?" song-link="" points="400">400</div>
+				<div class = "clue" id = "clue45" clue-text="What is this song?" song-link="" points="400">400</div>
+				<div class = "clue" id = "clue51" clue-text="What is this song?" song-link="" points="500">500</div>
+				<div class = "clue" id = "clue52" clue-text="What is this song?" song-link="" points="500">500</div>
+				<div class = "clue" id = "clue53" clue-text="What is this song?" song-link="" points="500">500</div>
+				<div class = "clue" id = "clue54" clue-text="What is this song?" song-link="" points="500">500</div>
+				<div class = "clue" id = "clue55" clue-text="What is this song?" song-link="" points="500">500</div>
+				
+				<div class="clue-popup">
+					<div class="clue-text"></div>
+					<div id="embed-iframe"></div>
+					
+					<div class="player"><span>Play</span></div>
+					
+					<input type="range" min="1" max="10" value="10" class="slider" id="myRange" oninput="this.nextElementSibling.nextElementSibling.value = ((this.value!=1)? this.value.concat(' seconds'):this.value.concat(' second'));updateWager();"><br>
+					<output style="padding:5px;margin-bottom:2px;position:relative;top:100px;">10 seconds</output>
+					
+					<p id="wager" points = "" ></p>
+					
+					<script>
+
+						function updateWager(){
+						const value = document.getElementById("myRange").value;
+						const win = document.getElementById("wager");
+						
+						win.innerHTML= "Wager: ".concat(Math.ceil(1.5**(10-value)*parseInt(win.points)).toString());
+						}
+					</script>
+						
+					
+					
+					
+					<button class="close-button">Close</button>
+				</div>
+			</div>
+			
+		</div>
+		<div class = "column right">
+			<div id="score-board">
+				<h1>Scoreboard</h1>
+				<table id="score-table">
+					<tr>
+						<th>Player</th>
+						<th>Score</th>
+					</tr>
+					<tbody id="score table">
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+	<script src="js/treblescript.js"></script>
+	
+</body>
