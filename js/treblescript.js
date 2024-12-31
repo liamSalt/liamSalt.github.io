@@ -4,6 +4,7 @@ const cats = document.querySelectorAll('.category');
 const cluePopup = document.querySelector('.clue-popup');
 const clueText = document.querySelector('.clue-text');
 const closeButton = document.querySelector('.close-button');
+let playerCount = 1;
 
 // Add click event to each cell
 cells.forEach(cell => {
@@ -39,4 +40,22 @@ closeButton.addEventListener('click', function() {
         cell.style.display = "block";  // Make cells visible again
     });
 });
-
+function increment(playerNum){
+	const value = document.getElementById("myRange").value;
+	const win = document.getElementById("wager");
+	const ID = 'player'.concat(playerNum.toString()).concat('score');
+	console.log(ID);
+	const player = document.getElementById(ID);
+							
+	player.innerHTML = (parseInt(player.innerHTML)+ Math.ceil(parseInt(win.points)*(1+0.5*(10-value)))).toString();
+}
+function decrement(playerNum){
+	const value = document.getElementById("myRange").value;
+	const win = document.getElementById("wager");
+	const ID = 'player'.concat(playerNum.toString()).concat('score');
+	console.log(ID);
+	const player = document.getElementById(ID);
+							
+	player.innerHTML = (parseInt(player.innerHTML)- Math.ceil(parseInt(win.points)*(1+0.5*(10-value)))).toString();
+}
+function playerInc(){playerCount+=1};

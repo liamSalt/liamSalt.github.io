@@ -60,7 +60,7 @@
 					<input type="range" min="1" max="10" value="10" class="slider" id="myRange" oninput="this.nextElementSibling.nextElementSibling.value = ((this.value!=1)? this.value.concat(' seconds'):this.value.concat(' second'));updateWager();"><br>
 					<output style="padding:5px;margin-bottom:2px;position:relative;top:100px;">10 seconds</output>
 					
-					<p id="wager" points = "" ></p>
+					<p id="wager" points = "0" >0</p>
 					
 					<script>
 
@@ -68,7 +68,7 @@
 						const value = document.getElementById("myRange").value;
 						const win = document.getElementById("wager");
 						
-						win.innerHTML= "Wager: ".concat(Math.ceil(1.5**(10-value)*parseInt(win.points)).toString());
+						win.innerHTML= "Wager: ".concat(Math.ceil(parseInt(win.points)*(1+0.5*(10-value))).toString());
 						}
 					</script>
 						
@@ -87,10 +87,61 @@
 					<tr>
 						<th>Player</th>
 						<th>Score</th>
+						<th>Actions</th>
 					</tr>
-					<tbody id="score table">
+					<tbody id="score-table-body">
+					<tr><td><div contenteditable>Player 1</div></td><td><div id="player1score" contenteditable>0</div></td><td><span class="dot" onclick="increment(1)"><b>+</b></span><span class="dot" onclick="decrement(1)"><b>-</b></span></td></tr>
+					<!--<tr><td><div contenteditable>Player 2</div></td><td><div id="player2score" contenteditable>0</div></td><td><span class="dot" onclick="increment(2)"><b>+</b></span><span class="dot" onclick="decrement(2)"><b>-</b></span></td></tr>
+					<tr><td><div contenteditable>Player 3</div></td><td><div id="player3score" contenteditable>0</div></td><td><span class="dot" onclick="increment(3)"><b>+</b></span><span class="dot" onclick="decrement(3)"><b>-</b></span></td></tr>>
+					<tr><td><div contenteditable>Player 4</div></td><td><div id="player4score" contenteditable>0</div></td><td><span class="dot" onclick="increment(4)"><b>+</b></span><span class="dot" onclick="decrement(4)"><b>-</b></span></td></tr>-->
 					</tbody>
+					
 				</table>
+				<span class="dot" onclick="newPlayer()"><b>+</b></span>
+				<script>
+				function newPlayer(){
+				playerInc();
+				const playerNum = playerCount;
+				
+				const div1 = document.createElement('div');
+				div1.innerHTML = 'New Player';div1.contentEditable = 'true';
+				const div2 = document.createElement('div');
+				div2.innerHTML = '0';
+				div2.id = "player".concat(playerNum).concat('score');
+				div2.contentEditable = 'true';
+				const cell1 = document.createElement('td');
+				cell1.appendChild(div1);
+				const cell2 = document.createElement('td');
+				cell2.appendChild(div2);
+				
+				row = document.createElement('tr');
+				
+				
+				
+				const plusBtn = document.createElement('span')
+				plusBtn.classList.add("dot");
+				plusBtn.onclick = function(){increment(playerNum)};
+				plusBtn.innerHTML = "<b>+</b>"
+				
+				const minusBtn = document.createElement('span')
+				minusBtn.classList.add("dot");
+				minusBtn.onclick = function(){decrement(playerNum)};
+				minusBtn.innerHTML = "<b>-</b>"
+				
+				const cell3 = document.createElement('td');
+				cell3.appendChild(plusBtn);
+				cell3.appendChild(minusBtn);
+				
+				
+				row.appendChild(cell1);
+				row.appendChild(cell2);
+				row.appendChild(cell3);
+				document.getElementById('score-table-body').appendChild(row);
+				
+				
+				
+				}
+				</script>
 			</div>
 		</div>
 	</div>
