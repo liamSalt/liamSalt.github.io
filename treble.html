@@ -57,9 +57,8 @@
 					
 					<div class="player"><span>Play</span></div>
 					
-					<input type="range" min="1" max="10" value="10" class="slider" id="myRange" oninput="this.nextElementSibling.nextElementSibling.value = ((this.value!=1)? this.value.concat(' seconds'):this.value.concat(' second'));updateWager();"><br>
+					<input type="range" min="1" max="20" value="20" class="slider" id="myRange" oninput="this.nextElementSibling.nextElementSibling.value = ((this.value!=2)? (0.5*this.value).toString().concat(' seconds'): (0.5*this.value).toString().concat(' second'));updateWager();"><br>
 					<output style="padding:5px;margin-bottom:2px;position:relative;top:100px;">10 seconds</output>
-					
 					<p id="wager" points = "0" >0</p>
 					
 					<script>
@@ -68,7 +67,7 @@
 						const value = document.getElementById("myRange").value;
 						const win = document.getElementById("wager");
 						
-						win.innerHTML= "Wager: ".concat(Math.ceil(parseInt(win.points)*(1+0.5*(10-value))).toString());
+						win.innerHTML= "Wager: ".concat(Math.ceil(parseInt(win.points)*(1+0.5*(10-0.5*value))).toString());
 						}
 					</script>
 						
@@ -146,7 +145,6 @@
 			</div>
 		</div>
 	</div>
-	<script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
 	<script src="js/treblescript.js"></script>
 	
 </body>
