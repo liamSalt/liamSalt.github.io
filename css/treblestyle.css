@@ -51,10 +51,14 @@ body {
 .close-button {
 	position:fixed;
 	bottom:43px;
-	left:29%;
+	left:20%;
     padding: 10px;
-    background-color: yellow;
-    color: black;
+     background-color: #1e90ff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 6px;
     cursor: pointer;
 }
 
@@ -192,4 +196,36 @@ body {
 	font-size:20px;
 	font-family:'monospace';
 	line-height:100%;
+}
+
+
+.reveal-button {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+  
+  position:fixed;
+	bottom:43px;
+	left:35%;
+  
+}
+}
+
+.reveal-button:hover {
+  background-color: #156fc1;
+}
+
+.answer-text {
+  margin-top: 12px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  position:fixed;
+	bottom:100px;
+	left:25%;
 }
