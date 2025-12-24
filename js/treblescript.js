@@ -121,7 +121,7 @@ folderInput.addEventListener("change", () => {
   }
 
   if (fileMap.has("game.json")) {
-    statusEl.textContent = "Game pack detected.";
+    statusEl.textContent = "Game pack detected. Press load button.";
     loadBtn.disabled = false;
   } else {
     statusEl.textContent = "Missing game.json.";
@@ -170,9 +170,6 @@ async function loadAndValidateGame(fileMap) {
     }
 
     cat.questions.forEach((q, qIdx) => {
-      if (typeof q.value !== "number") {
-        throw new Error(`Invalid value in ${cat.name}, question ${qIdx + 1}.`);
-      }
 
       if (typeof q.audio !== "string") {
         throw new Error(`Missing audio path in ${cat.name}, question ${qIdx + 1}.`);

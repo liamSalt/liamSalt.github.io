@@ -152,8 +152,10 @@
 	  <h2>Upload Game Pack</h2>
 
 	  <p>
-		Upload a folder containing <code>game.json</code> and an
-		<code>audio/</code> folder with your song files.
+		Upload a folder containing both a <code>game.json</code> file and an <code>audio/</code> subfolder containing your song files. Use <code>game.json</code> to define your categories and the order of the songs. The <code>audio/</code>
+		folder should contain all of your music as <code>.mp3</code> or <code>.m4a</code> files. <a href="files/GamepackTemplate.zip" download>
+  Download the game pack template
+</a> to see the required structure of your game pack.
 	  </p>
 
 	  <input
@@ -163,16 +165,20 @@
 		multiple
 	  />
 
-	  <div id="upload-status" class="status"></div>
+	  <div id="upload-status" class="status">Upload a game pack</div>
 
 	  <button id="loadGameBtn" disabled>
 		Load Game
 	  </button>
-	  <a href="files/Gamepack Template" download>
-  Download Game Pack Template
-</a>
-	</div>
-
-	<script src="js/treblescript.js"></script>
+	  
 	
+
+	
+	
+	<p>Below is an example of what  your <code>game.json</code> file should look like. The only fields which are absolutely required are <code>audio</code> and <code>startOffset</code> which contain
+the path to the song and the time value (in seconds) the game should start the song at, respectively. For example, if an audio file obtained from YouTube is padded with 5 seconds of initial silence,
+ you should set <code>startOffset</code> to <code>5</code>. The <code>answer</code> and <code>artist</code> fields are only required if you want the reveal button to work.	</p>
+ <img src="img/gamejson.jpg" style="width:50%;height:auto"></img>
+ <script src="js/treblescript.js" ></script>
+ </div>
 </body>

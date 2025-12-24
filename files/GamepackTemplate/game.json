@@ -1,54 +1,54 @@
 {
-  "title": "Sample Music Jeopardy - Test",
+  "title": "Treble Template",
   "categories": [
     {
       "name": "Classic Rock",
       "questions": [
-        { "value": 200, "audio": "audio/song1.mp3", "answer": "Bohemian Rhapsody", "artist": "Queen", "startOffset": 0 },
-        { "value": 400, "audio": "audio/song2.mp3", "answer": "Time", "artist": "Pink Floyd", "startOffset": 0 },
-        { "value": 600, "audio": "audio/song3.mp3", "answer": "Stairway to Heaven", "artist": "Led Zeppelin", "startOffset": 0 },
-        { "value": 800, "audio": "audio/song4.mp3", "answer": "Paint It Black", "artist": "The Rolling Stones", "startOffset": 0 },
-        { "value": 1000, "audio": "audio/song5.mp3", "answer": "Baba O'Riley", "artist": "The Who", "startOffset": 0 }
+        {"audio": "audio/song1.mp3", "answer": "Bohemian Rhapsody", "artist": "Queen", "startOffset": 0 },
+        {"audio": "audio/song2.mp3", "answer": "Time", "artist": "Pink Floyd", "startOffset": 0 },
+        {"audio": "audio/song3.mp3", "answer": "Stairway to Heaven", "artist": "Led Zeppelin", "startOffset": 0 },
+        {"audio": "audio/song4.mp3", "answer": "Paint It Black", "artist": "The Rolling Stones", "startOffset": 0 },
+        {"audio": "audio/song5.mp3", "answer": "Baba O'Riley", "artist": "The Who", "startOffset": 0 }
       ]
     },
     {
       "name": "Pop Hits",
       "questions": [
-        { "value": 200, "audio": "audio/song6.mp3", "answer": "Thriller", "artist": "Michael Jackson", "startOffset": 0 },
-        { "value": 400, "audio": "audio/song7.mp3", "answer": "Like a Virgin", "artist": "Madonna", "startOffset": 0 },
-        { "value": 600, "audio": "audio/song8.mp3", "answer": "Purple Rain", "artist": "Prince", "startOffset": 0 },
-        { "value": 800, "audio": "audio/song9.mp3", "answer": "Hero", "artist": "Mariah Carey", "startOffset": 0 },
-        { "value": 1000, "audio": "audio/song10.mp3", "answer": "I Will Always Love You", "artist": "Whitney Houston", "startOffset": 0 }
+        { "audio": "audio/song6.mp3", "answer": "Thriller", "artist": "Michael Jackson", "startOffset": 0 },
+        { "audio": "audio/song7.mp3", "answer": "Like a Virgin", "artist": "Madonna", "startOffset": 0 },
+        { "audio": "audio/song8.mp3", "answer": "Purple Rain", "artist": "Prince", "startOffset": 0 },
+        { "audio": "audio/song9.mp3", "answer": "Hero", "artist": "Mariah Carey", "startOffset": 0 },
+        { "audio": "audio/song10.mp3", "answer": "I Will Always Love You", "artist": "Whitney Houston", "startOffset": 0 }
       ]
     },
     {
       "name": "90s Alternative",
       "questions": [
-        { "value": 200, "audio": "audio/song11.mp3", "answer": "Smells Like Teen Spirit", "artist": "Nirvana", "startOffset": 0 },
-        { "value": 400, "audio": "audio/song12.mp3", "answer": "Creep", "artist": "Radiohead", "startOffset": 0 },
-        { "value": 600, "audio": "audio/song13.mp3", "answer": "Basket Case", "artist": "Green Day", "startOffset": 0 },
-        { "value": 800, "audio": "audio/song14.mp3", "answer": "Wonderwall", "artist": "Oasis", "startOffset": 0 },
-        { "value": 1000, "audio": "audio/song15.mp3", "answer": "Alive", "artist": "Pearl Jam", "startOffset": 0 }
+        { "audio": "audio/song11.mp3", "answer": "Smells Like Teen Spirit", "artist": "Nirvana", "startOffset": 0 },
+        { "audio": "audio/song12.mp3", "answer": "Creep", "artist": "Radiohead", "startOffset": 0 },
+        { "audio": "audio/song13.mp3", "answer": "Basket Case", "artist": "Green Day", "startOffset": 0 },
+        { "audio": "audio/song14.mp3", "answer": "Wonderwall", "artist": "Oasis", "startOffset": 0 },
+        { "audio": "audio/song15.mp3", "answer": "Alive", "artist": "Pearl Jam", "startOffset": 0 }
       ]
     },
     {
       "name": "Movie Soundtracks",
       "questions": [
-        { "value": 200, "audio": "audio/song16.mp3", "answer": "You're the One That I Want", "artist": "Grease", "startOffset": 0 },
-        { "value": 400, "audio": "audio/song17.mp3", "answer": "My Heart Will Go On", "artist": "Celine Dion", "startOffset": 0 },
-        { "value": 600, "audio": "audio/song18.mp3", "answer": "Gonna Fly Now", "artist": "Rocky", "startOffset": 0 },
-        { "value": 800, "audio": "audio/song19.mp3", "answer": "Star Wars Main Theme", "artist": "John Williams", "startOffset": 0 },
-        { "value": 1000, "audio": "audio/song20.mp3", "answer": "GoldenEye", "artist": "Tina Turner", "startOffset": 0 }
+        { "audio": "audio/song16.mp3", "answer": "You're the One That I Want", "artist": "Grease", "startOffset": 0 },
+        { "audio": "audio/song17.mp3", "answer": "My Heart Will Go On", "artist": "Celine Dion", "startOffset": 0 },
+        { "audio": "audio/song18.mp3", "answer": "Gonna Fly Now", "artist": "Rocky", "startOffset": 0 },
+        { "audio": "audio/song19.mp3", "answer": "Star Wars Main Theme", "artist": "John Williams", "startOffset": 0 },
+        { "audio": "audio/song20.mp3", "answer": "GoldenEye", "artist": "Tina Turner", "startOffset": 0 }
       ]
     },
     {
       "name": "One-Hit Wonders",
       "questions": [
-        { "value": 200, "audio": "audio/song21.mp3", "answer": "Take On Me", "artist": "A-ha", "startOffset": 0 },
-        { "value": 400, "audio": "audio/song22.mp3", "answer": "Achy, Breaky Heart", "artist": "Billy Ray Cyrus", "startOffset": 0 },
-        { "value": 600, "audio": "audio/song23.mp3", "answer": "Ice Ice Baby", "artist": "Vanilla Ice", "startOffset": 0 },
-        { "value": 800, "audio": "audio/song24.mp3", "answer": "Mambo No. 5", "artist": "Lou Bega", "startOffset": 0 },
-        { "value": 1000, "audio": "audio/song25.mp3", "answer": "It's My Life", "artist": "Talk Talk", "startOffset": 0 }
+        { "audio": "audio/song21.mp3", "answer": "Take On Me", "artist": "A-ha", "startOffset": 0 },
+        { "audio": "audio/song22.mp3", "answer": "Achy, Breaky Heart", "artist": "Billy Ray Cyrus", "startOffset": 0 },
+        { "audio": "audio/song23.mp3", "answer": "Ice Ice Baby", "artist": "Vanilla Ice", "startOffset": 0 },
+        { "audio": "audio/song24.mp3", "answer": "Mambo No. 5", "artist": "Lou Bega", "startOffset": 0 },
+        { "audio": "audio/song25.mp3", "answer": "It's My Life", "artist": "Talk Talk", "startOffset": 0 }
       ]
     }
   ]
