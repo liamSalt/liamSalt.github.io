@@ -229,3 +229,26 @@ body {
 	bottom:100px;
 	left:25%;
 }
+#dailyDoubleOverlay {
+    display: none; /* hidden by default */
+    position: absolute; /* relative to #game-area */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #060CE9;
+    color: white;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1500;
+    
+    /* flex layout only when visible */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#dailyDoubleOverlay .dd-text {
+    font-family: 'Impact', sans-serif;
+    font-size: 100px;
+    white-space: pre-line;
+}

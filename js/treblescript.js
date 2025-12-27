@@ -14,6 +14,7 @@ let fileMap = new Map();
 let game; 
 
 let currentQuestion = null;
+let timeMultiplier = 1; // normal
 
 cells.forEach(cell => {
   cell.addEventListener('click', function () {
@@ -33,14 +34,27 @@ cells.forEach(cell => {
 
     // If a game is loaded, bind audio question
     if (game) {
-      const categoryIndex = parseInt(cell.getAttribute("category"));
-      const songIndex = parseInt(cell.getAttribute("song"));
-      currentQuestion =
-        game.categories[categoryIndex].questions[songIndex];
+      const allClues = Array.from(cells);
+const cellIndex = allClues.indexOf(cell);
+
+// 5 categories, 5 rows
+const row = Math.floor(cellIndex / 5);   // question index (0–4)
+const col = cellIndex % 5;               // category index (0–4)
+
+currentQuestion = game.categories[col].questions[row];
     } else {
       // No-file mode: no audio question
       currentQuestion = null;
     }
+	
+	if (currentQuestion?.dailydouble) {
+  timeMultiplier = 2;
+  showDailyDoubleOverlay();
+  configureSliderForDailyDouble();
+	} else {
+	  timeMultiplier = 1;
+	  configureSliderNormal();
+	}
 
     // Mark cell used
     cell.innerHTML = "";
@@ -61,6 +75,20 @@ playButton.onclick = async function () {
 
   await playQuestion(currentQuestion, timeWindow);
 };
+
+function configureSliderNormal() {
+  const slider = document.getElementById("myRange");
+  slider.min = 1;
+  slider.max = 20;
+  resetTimeSlider();
+}
+
+function configureSliderForDailyDouble() {
+  const slider = document.getElementById("myRange");
+  slider.min = 1;
+  slider.max = 40;
+  resetTimeSlider();
+}
 // Function to display the clue popup
 function showClue(clueX) {
 	cells.forEach(cell => {
@@ -324,4 +352,21 @@ function resetTimeSlider() {
   output.value = "10 seconds";
 
   updateWager(); // recalc wager based on reset time
+}
+
+function showDailyDoubleOverlay() {
+    const overlay = document.getElementById("dailyDoubleOverlay");
+    const audio = document.getElementById("dailyDoubleSound");
+
+    // Show overlay
+    overlay.style.display = "flex";
+
+    // Play sound
+    audio.currentTime = 0;
+    audio.play();
+
+    // Hide overlay after 4 seconds
+    setTimeout(() => {
+        overlay.style.display = "none";
+    }, 3000);
 }

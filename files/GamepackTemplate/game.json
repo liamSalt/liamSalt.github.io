@@ -14,7 +14,7 @@
     {
       "name": "Pop Hits",
       "questions": [
-        { "audio": "audio/song6.mp3", "answer": "Thriller", "artist": "Michael Jackson", "startOffset": 0 },
+        { "audio": "audio/song6.mp3", "answer": "Thriller", "artist": "Michael Jackson", "startOffset": 0, "dailydouble": true },
         { "audio": "audio/song7.mp3", "answer": "Like a Virgin", "artist": "Madonna", "startOffset": 0 },
         { "audio": "audio/song8.mp3", "answer": "Purple Rain", "artist": "Prince", "startOffset": 0 },
         { "audio": "audio/song9.mp3", "answer": "Hero", "artist": "Mariah Carey", "startOffset": 0 },

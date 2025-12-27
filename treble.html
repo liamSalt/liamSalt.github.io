@@ -50,8 +50,9 @@
 				<div class = "clue" id = "clue53" clue-text="What is this song?" category = "4" song = "2" song-link="" points="500">500</div>
 				<div class = "clue" id = "clue54" clue-text="What is this song?" category = "4" song = "3" song-link="" points="500">500</div>
 				<div class = "clue" id = "clue55" clue-text="What is this song?" category = "4" song = "4" song-link="" points="500">500</div>
-				
+				 
 				<div class="clue-popup">
+				<div id="dailyDoubleOverlay"> <div class="dd-text"> DAILY<br>DOUBLE </div></div>
 					<div class="clue-text"></div>
 					<div id="embed-iframe"></div>
 					
@@ -63,12 +64,21 @@
 					
 					<script>
 
-						function updateWager(){
-						const value = document.getElementById("myRange").value;
-						const win = document.getElementById("wager");
-						
-						win.innerHTML= "Wager: ".concat(Math.ceil(parseInt(win.points)*(1+0.5*(10-0.5*value))).toString());
-						}
+						function updateWager() {
+  const value = parseInt(document.getElementById("myRange").value);
+  const win = document.getElementById("wager");
+
+  const seconds = 0.5 * value;
+  const base = parseInt(win.points) || 0;
+
+  const effectiveSeconds = seconds / timeMultiplier;
+
+  const wager = Math.ceil(
+    base * (1 + 0.5 * (10 - effectiveSeconds))
+  );
+
+  win.innerHTML = "Wager: " + wager;
+}
 					</script>
 						
 					
@@ -177,8 +187,12 @@
 	
 	<p>Below is an example of what  your <code>game.json</code> file should look like. The only fields which are absolutely required are <code>audio</code> and <code>startOffset</code> which contain
 the path to the song and the time value (in seconds) the game should start the song at, respectively. For example, if an audio file obtained from YouTube is padded with 5 seconds of initial silence,
- you should set <code>startOffset</code> to <code>5</code>. The <code>answer</code> and <code>artist</code> fields are only required if you want the reveal button to work.	</p>
+ you should set <code>startOffset</code> to <code>5</code>. Add <code>"dailydouble": true</code> to make a question a "daily double", i.e. receive double the time. The <code>answer</code> and <code>artist</code> fields are only required if you want the reveal button to work.	</p>
  <img src="img/gamejson.jpg" style="width:50%;height:auto"></img>
  <script src="js/treblescript.js" ></script>
  </div>
+ 
+
+
+<audio id="dailyDoubleSound" src="files/dailydouble.mp3"></audio>
 </body>
