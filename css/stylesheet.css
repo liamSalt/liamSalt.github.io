@@ -217,7 +217,8 @@ h1 {
   to {opacity: 1}
 }	
 .email-container {display:none;}
-@media screen and (min-width:847px) {
+@media screen and (min-width:858px) {
+	
 .email-container {
 	position: relative;
     width: 200px; 
@@ -226,7 +227,7 @@ h1 {
 	float:right;
 	padding-right:21%;
 }
-
+}
 
 #emailwhite {
 	
@@ -295,17 +296,24 @@ justify-content: center;}
 
         .links-container {
             display: flex;
-
+			flex-wrap: wrap;
             gap: 20px;
         }
 
         .image-card {
-            position: relative;
-            width: 360px;
-            height: 240px;
-            overflow: hidden;
-            border-radius: 10px;
-        }
+    position: relative;
+    /* This allows 3 items + 20px gaps to fit in one row */
+    width: calc(33.33% - 14px); 
+    /* This ensures they never get larger than your original design */
+    max-width: 360px; 
+	min-width: 200px;
+    /* This ensures they stay a consistent shape while resizing */
+    aspect-ratio: 3 / 2; 
+    overflow: hidden;
+    border-radius: 10px;
+    /* This ensures that when they stack, they take up the full available width */
+    flex-grow: 1; 
+}
 
         .image-card img {
             width: 100%;
