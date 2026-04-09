@@ -292,6 +292,9 @@ h1 {
 }
 .links-body {
       display: flex;
+	  padding-top:30px;
+	  
+	  padding-bottom:30px;
 justify-content: center;}
 
         .links-container {
